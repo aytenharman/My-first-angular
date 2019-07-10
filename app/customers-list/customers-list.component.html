@@ -1,0 +1,32 @@
+<h1 style="color: gray">Customers</h1>
+<div style="width: 70%">
+    <p-table [value]="customers2">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Active</th>
+                <th>Options</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-ayten>
+            <tr>
+                <td>{{ayten.id}}</td>
+                <td>{{ayten.name}}</td>
+                <td>{{ayten.age}}</td>
+                <td>{{ayten.active}}</td>
+                <td>
+                    <div>
+                        <button pButton type="button" style="margin-top: 10px" class="ui-button-danger" (click)='deleteCustomer(ayten)' label="Delete"></button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<!--   listenin altında tüm listeyi silmek için kullanılan buton -->
+<div>
+    <button pButton type="button" style="margin-top: 50px" class="ui-button-danger" (click)='deleteCustomers()' label="Delete All"></button>
+</div>

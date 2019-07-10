@@ -1,0 +1,26 @@
+<h3 style="color: gray">Create Customer</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name" style="color: red">Name</label>
+      <input type="text" style="margin-left: 10px;" class="form-control" id="name" required [(ngModel)]="customer.name" name="name">
+    </div>
+ 
+    <div class="form-group">
+      <label for="age" style="color: red">Age</label>
+      <input type="text"  style="margin-left: 21px; margin-top: 5px" class="form-control" id="age" required [(ngModel)]="customer.age" name="age">
+    </div>
+ 
+    <div class="form-group">
+      <label for="active" style="color: red">Active</label>
+      <input type="text" style="margin-left: 5px; margin-top: 5px" class="form-control" id="active" required [(ngModel)]="customer.active" name="active">
+    </div>
+
+    <p-button type="submit" style="margin-left: 48px; margin-top: 20px" class="btn btn-success" label="Submit"></p-button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4 style="color: red">You submitted successfully!</h4>
+  <p-button  style="margin-top: 30px" class="btn btn-success" (click)="newCustomer()" label="Add"></p-button>
+</div>
